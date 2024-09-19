@@ -1,4 +1,4 @@
-import Container from '../Container/Container';
+import Container from '../common/Container/Container';
 import { StyledHeader } from './Header.styled';
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 
