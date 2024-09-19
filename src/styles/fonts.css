@@ -1,3 +1,11 @@
+/* Kanit */
+@font-face {
+  font-family: 'Kanit', sans-serif;
+  src: url('./../assets/fonts/Kanit/Kanit-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Kanit', sans-serif;
   src: url('./../assets/fonts/Kanit/Kanit-Medium.ttf');
@@ -12,6 +20,7 @@
   font-style: italic;
 }
 
+/* Poppins */
 @font-face {
   font-family: 'Poppins', sans-serif;
   src: url('./../assets/fonts/Poppins/Poppins-Regular.ttf');

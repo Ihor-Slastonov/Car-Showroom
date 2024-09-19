@@ -41,6 +41,9 @@ const theme = {
   colors: {
     white: '#FFFFFF',
     black: '#000000',
+    brown: '#343131',
+    orange: '#E48F45',
+    gold: '#7d6457',
 
     light: '#EEEEEE',
     dark: '#30322f',
