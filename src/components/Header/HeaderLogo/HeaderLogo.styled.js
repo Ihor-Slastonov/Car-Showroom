@@ -7,6 +7,7 @@ export const StyledLink = styled(Link)`
   display: inline-flex;
   flex-direction: column;
   gap: 2px;
+  width: 84px;
 
   font-family: ${({ theme }) => theme.fonts.Kanit};
   font-size: ${({ theme }) => theme.fontSize.small.xl};
@@ -33,6 +34,7 @@ export const StyledLink = styled(Link)`
 
   /* tablet */
   ${({ theme }) => theme.breakpoints.tablet} {
+    width: 108px;
     font-size: ${({ theme }) => theme.fontSize.medium.s};
     gap: 4px;
   }
