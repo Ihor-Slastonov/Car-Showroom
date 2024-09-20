@@ -19,3 +19,14 @@ export const StyledHeader = styled.header`
     padding: 22px 0;
   }
 `;
+
+export const HeaderContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  ${({ theme }) => theme.breakpoints.tablet} {
+    flex-direction: row;
+    gap: 40px;
+  }
+`;

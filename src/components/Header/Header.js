@@ -1,12 +1,17 @@
 import Container from '../common/Container/Container';
-import { StyledHeader } from './Header.styled';
+import SearchBar from '../SearchBar/SearchBar';
 import HeaderLogo from './HeaderLogo/HeaderLogo';
+
+import { StyledHeader, HeaderContentWrapper } from './Header.styled';
 
 const Header = () => {
   return (
     <StyledHeader>
       <Container>
-        <HeaderLogo />
+        <HeaderContentWrapper>
+          <HeaderLogo />
+          <SearchBar />
+        </HeaderContentWrapper>
       </Container>
     </StyledHeader>
   );
