@@ -4,9 +4,12 @@ import styled from 'styled-components';
 
 export const StyledLink = styled(Link)`
   position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
 
   font-family: ${({ theme }) => theme.fonts.Kanit};
-  font-size: ${({ theme }) => theme.fontSize.small.l};
+  font-size: ${({ theme }) => theme.fontSize.small.xl};
   font-style: italic;
   line-height: 1;
 
@@ -17,8 +20,7 @@ export const StyledLink = styled(Link)`
   &::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 65%;
 
     width: 100%;
     height: 1px;
@@ -29,22 +31,26 @@ export const StyledLink = styled(Link)`
     );
   }
 
-  &::after {
-    content: 'dreams come true';
-    position: absolute;
-    bottom: -8px;
-    right: 50%;
-    transform: translateX(50%);
-
-    width: 100%;
-
-    font-size: 8px;
-    font-weight: 200;
-    font-style: normal;
-    text-align: center;
+  /* tablet */
+  ${({ theme }) => theme.breakpoints.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.medium.s};
+    gap: 4px;
   }
 `;
 
 export const StyledSpan = styled.span`
   color: ${({ theme }) => theme.colors.orange};
+`;
+
+export const SecondaryText = styled.span`
+  display: inline-block;
+  font-size: ${({ theme }) => theme.fontSize.small.xxs};
+  font-weight: 200;
+  font-style: normal;
+  text-align: center;
+
+  /* tablet */
+  ${({ theme }) => theme.breakpoints.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.small.xs};
+  }
 `;

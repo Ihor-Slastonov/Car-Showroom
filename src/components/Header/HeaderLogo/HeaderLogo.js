@@ -1,9 +1,12 @@
-import { StyledLink, StyledSpan } from './HeaderLogo.styled';
+import { StyledLink, StyledSpan, SecondaryText } from './HeaderLogo.styled';
 
 const HeaderLogo = () => {
   return (
     <StyledLink to="/">
-      Drive<StyledSpan>Lux</StyledSpan>
+      <span>
+        Drive<StyledSpan>Lux</StyledSpan>
+      </span>
+      <SecondaryText>dreams come true</SecondaryText>
     </StyledLink>
   );
 };
