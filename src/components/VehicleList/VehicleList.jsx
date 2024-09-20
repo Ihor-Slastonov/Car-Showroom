@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types';
-
+import { useVehicle } from '../../utils/hooks/useVehicle';
 import VehicleCard from './VehicleCard/VehicleCard';
 
 import { StyledUl } from './VehicleList.styled';
 
-const VehicleList = ({ vehicles }) => {
+const VehicleList = () => {
+  const { filteredVehicles } = useVehicle();
   return (
     <StyledUl>
-      {vehicles?.map(vehicle => (
+      {filteredVehicles?.map(vehicle => (
         <li key={vehicle.id}>
           <VehicleCard vehicle={vehicle} />
         </li>
@@ -17,7 +17,3 @@ const VehicleList = ({ vehicles }) => {
 };
 
 export default VehicleList;
-
-VehicleList.propTypes = {
-  vehicles: PropTypes.array.isRequired,
-};
