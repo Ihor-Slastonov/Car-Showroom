@@ -48,6 +48,7 @@ const theme = {
     light: '#EEEEEE',
     dark: '#30322f',
     dark_deep: '#1E201E',
+    dark_deep_tr: 'rgba(30, 32, 30, 0.5)',
   },
 };
 

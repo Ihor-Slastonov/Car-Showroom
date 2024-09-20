@@ -11,7 +11,7 @@ export const StyledContainer = styled.div`
   }
 
   /* tablet */
-  ${({ theme }) => theme.breakpoints.mobile} {
+  ${({ theme }) => theme.breakpoints.tablet} {
     width: 768px;
     padding: 0 40px;
   }
