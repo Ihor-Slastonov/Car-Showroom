@@ -2,7 +2,7 @@
 
 This is vehicle showroom project that demonstrates how to use
 [Create React App](https://github.com/facebook/create-react-app) and the
-[DummyJSON](https://dummyjson.com/) API to fetch events and display them on a
+[DummyJSON](https://dummyjson.com/) API to fetch vehicles and display them on a
 webpage.
 
 This is an adaptive web application(mobile, tablet, desktop)
