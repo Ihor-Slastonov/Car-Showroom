@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {  useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { Navigation, Thumbs, Pagination } from 'swiper/modules';
@@ -13,13 +13,13 @@ import {
   ThumbsSlide,
 } from './VehicleImagesCarousel.styled';
 
-import 'swiper/css';
+import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
 
 const VehicleImagesCarousel = ({ images }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const thumbsSwiperRef = useRef(null);
 
   return (
     <CarouselContainer>
@@ -28,7 +28,9 @@ const VehicleImagesCarousel = ({ images }) => {
         spaceBetween={10}
         navigation={true}
         pagination={{ clickable: true }}
-        thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+        thumbs={{ swiper: thumbsSwiperRef.current }}
+        observer={true}
+        observeParents={true}
       >
         {images?.map((image, idx) => (
           <StyledSlide key={idx}>
@@ -40,18 +42,19 @@ const VehicleImagesCarousel = ({ images }) => {
       <ThumbsSwiper
         modules={[Thumbs]}
         onSwiper={swiper => {
-          setThumbsSwiper(swiper);
+          thumbsSwiperRef.current = swiper;
           swiper.update();
         }}
         spaceBetween={10}
         freeMode={true}
         watchSlidesProgress={true}
         slidesPerView={3}
-        watchOverflow={true}
-        onSlideChange={() => thumbsSwiper.update()}
       >
         {images?.map((image, idx) => (
-          <ThumbsSlide key={idx}>
+          <ThumbsSlide
+            key={idx}
+            onClick={() => thumbsSwiperRef.current.slideTo(idx)}
+          >
             <MyImage
               src={image}
               alt={`vehicle-thumbnail-${idx}`}
@@ -63,7 +66,6 @@ const VehicleImagesCarousel = ({ images }) => {
     </CarouselContainer>
   );
 };
-
 export default VehicleImagesCarousel;
 
 VehicleImagesCarousel.propTypes = {

@@ -29,6 +29,14 @@ export const StyledSwipper = styled(Swiper)`
   ${({ theme }) => theme.breakpoints.desktop} {
     height: 274px;
   }
+  .swiper-slide-thumb-active {
+    border: 2px solid ${({ theme }) => theme.colors.gold};
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const StyledSlide = styled(SwiperSlide)`
@@ -54,6 +62,11 @@ export const ThumbsSwiper = styled(Swiper)`
 
   .swiper-slide-thumb-active {
     border: 2px solid ${({ theme }) => theme.colors.gold};
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: auto;
   }
 `;
 
