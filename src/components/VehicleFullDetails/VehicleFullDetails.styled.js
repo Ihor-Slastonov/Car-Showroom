@@ -11,7 +11,7 @@ export const VehicleWrapper = styled.div`
   }
 `;
 
-export const VehicleId = styled.p`
+export const VehicleId = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

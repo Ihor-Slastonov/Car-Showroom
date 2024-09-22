@@ -18,12 +18,14 @@ import {
   VehicleShippingTitle,
   VehicleQrWrapper,
 } from './VehicleFullDetails.styled';
+import RatingStars from '../RatingStars/RatingStars';
 
 const VehicleFullDetails = ({ vehicle }) => {
   const {
     id,
     sku,
     title,
+    rating,
     brand,
     description,
     price,
@@ -49,6 +51,7 @@ const VehicleFullDetails = ({ vehicle }) => {
         <div>
           <VehicleId>
             <span>id: {id}</span> <span>sku: {sku}</span>
+            <RatingStars rating={rating} />
           </VehicleId>
 
           <VehicleTitleWrapper>
