@@ -11,15 +11,13 @@ import {
   StyledSlide,
   ThumbsSwiper,
   ThumbsSlide,
-  ModalBackdrop,
-  ModalContent,
-  CloseButton,
 } from './VehicleImagesCarousel.styled';
 
 import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
+import Modal from '../../common/Modal/Modal';
 
 const VehicleImagesCarousel = ({ images }) => {
   const thumbsSwiperRef = useRef(null);
@@ -80,18 +78,15 @@ const VehicleImagesCarousel = ({ images }) => {
       </ThumbsSwiper>
 
       {isModalOpen && (
-        <ModalBackdrop onClick={closeModal}>
-          <ModalContent onClick={e => e.stopPropagation()}>
-            <CloseButton onClick={closeModal}>&times;</CloseButton>
-            {currentImage && (
-              <MyImage
-                src={currentImage}
-                alt="Full vehicle image"
-                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
-              />
-            )}
-          </ModalContent>
-        </ModalBackdrop>
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {currentImage && (
+            <MyImage
+              src={currentImage}
+              alt="Full vehicle image"
+              style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+            />
+          )}
+        </Modal>
       )}
     </CarouselContainer>
   );
