@@ -7,8 +7,14 @@ const fetchAllVehicles = async () => {
   return response.data;
 };
 
+const fetchVehicleById = async id => {
+  const response = await axios.get(`${BASE_URL}/${id}`);
+  return response.data;
+};
+
 const vehicleApi = {
   fetchAllVehicles,
+  fetchVehicleById,
 };
 
 export default vehicleApi;

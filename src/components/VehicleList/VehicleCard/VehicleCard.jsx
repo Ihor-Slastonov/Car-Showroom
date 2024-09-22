@@ -59,11 +59,7 @@ const VehicleCard = ({ vehicle }) => {
           <CardFinalPrice>{finalPrice} $</CardFinalPrice>
         </div>
 
-        <StyledLink
-          to={{ pathname: `/vehicles/${vehicle.id}`, state: { vehicle } }}
-        >
-          See details
-        </StyledLink>
+        <StyledLink to={`/vehicles/${vehicle.id}`}>See details</StyledLink>
       </CardInfoWrapper>
     </CardWrapper>
   );
