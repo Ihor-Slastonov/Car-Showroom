@@ -39,7 +39,10 @@ const VehicleImagesCarousel = ({ images }) => {
 
       <ThumbsSwiper
         modules={[Thumbs]}
-        onSwiper={setThumbsSwiper}
+        onSwiper={swiper => {
+          setThumbsSwiper(swiper);
+          swiper.update();
+        }}
         spaceBetween={10}
         freeMode={true}
         watchSlidesProgress={true}
