@@ -4,13 +4,14 @@ import { VehicleProvider } from '../VehicleContext/VehicleContext';
 
 import Header from '../Header/Header';
 import GoTopButton from '../GoTopButton/GoTopButton';
+import MyLoader from '../common/MyLoader/MyLoader';
 
 const SharedLayout = () => {
   return (
     <VehicleProvider>
       <Header />
       <main>
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<MyLoader />}>
           <Outlet />
         </Suspense>
       </main>

@@ -3,9 +3,12 @@ import { useVehicle } from '../../utils/hooks/useVehicle';
 
 import Container from '../../components/common/Container/Container';
 import Section from '../../components/common/Section/Section';
+import MyLoader from '../../components/common/MyLoader/MyLoader';
+
+import VehicleList from '../../components/VehicleList/VehicleList';
 
 import vehicleApi from '../../services/vehiclesApi';
-import VehicleList from '../../components/VehicleList/VehicleList';
+
 import { NotFoundText } from './HomePage.styled';
 
 const HomePage = () => {
@@ -33,7 +36,7 @@ const HomePage = () => {
   return (
     <Section>
       <Container>
-        {isLoading && <p>Loading</p>}
+        {isLoading && <MyLoader />}
         {!isLoading && filteredVehicles.length !== 0 && <VehicleList />}
         {!isLoading && filteredVehicles.length === 0 && (
           <NotFoundText>Vehicles Not Found</NotFoundText>
