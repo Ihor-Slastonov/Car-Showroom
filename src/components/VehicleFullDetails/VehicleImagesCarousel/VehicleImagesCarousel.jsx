@@ -44,6 +44,8 @@ const VehicleImagesCarousel = ({ images }) => {
         freeMode={true}
         watchSlidesProgress={true}
         slidesPerView={3}
+        watchOverflow={true}
+        onSlideChange={() => thumbsSwiper.update()}
       >
         {images?.map((image, idx) => (
           <ThumbsSlide key={idx}>

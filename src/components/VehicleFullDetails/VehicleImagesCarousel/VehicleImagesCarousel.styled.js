@@ -26,7 +26,7 @@ export const StyledSwipper = styled(Swiper)`
     background-color: ${({ theme }) => theme.colors.gold};
   }
 
-  ${({ theme }) => theme.breakpoints.desktop}{
+  ${({ theme }) => theme.breakpoints.desktop} {
     height: 274px;
   }
 `;
@@ -53,8 +53,7 @@ export const ThumbsSwiper = styled(Swiper)`
   }
 
   .swiper-slide-thumb-active {
-    border: 1px solid ${({ theme }) => theme.colors.gold};
-    box-shadow: 0 0 10px rgba(32, 32, 20, 0.717);
+    border: 2px solid ${({ theme }) => theme.colors.gold};
   }
 `;
 
