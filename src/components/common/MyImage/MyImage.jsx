@@ -6,13 +6,14 @@ import MyLoader from '../MyLoader/MyLoader';
 const MyImage = ({
   src = 'https://via.placeholder.com/400x300',
   alt = 'image',
+  loaderSize = 40,
 }) => {
   return (
     <>
       <Img
         src={src}
         alt={alt}
-        loader={<MyLoader />}
+        loader={<MyLoader size={loaderSize} />}
         onError={e => {
           e.target.src = 'https://via.placeholder.com/400x300';
         }}
@@ -24,6 +25,7 @@ const MyImage = ({
 export default MyImage;
 
 MyImage.propTypes = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
+  src: PropTypes.string,
+  alt: PropTypes.string,
+  loaderSize: PropTypes.number,
 };
