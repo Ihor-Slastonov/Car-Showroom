@@ -9,6 +9,7 @@ import Container from '../../components/common/Container/Container';
 import MyLoader from '../../components/common/MyLoader/MyLoader';
 import VehicleFullDetails from '../../components/VehicleFullDetails/VehicleFullDetails';
 import VehicleComments from '../../components/VehicleComments/VehicleComments';
+import GoBackButton from '../../components/GoBackButton/GoBackButton';
 
 const VehiclePage = () => {
   const { vehicleId } = useParams();
@@ -35,6 +36,7 @@ const VehiclePage = () => {
     <>
       <Section>
         <Container>
+          <GoBackButton />
           {isLoading && <MyLoader />}
           {!isLoading && vehicle && <VehicleFullDetails vehicle={vehicle} />}
         </Container>
