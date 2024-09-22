@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types';
-import { ModalBackdrop, ModalContent, CloseButton } from './Modal.styled';
 import { useEffect } from 'react';
+
+import PropTypes from 'prop-types';
+
+import { ModalBackdrop, ModalContent, CloseButton } from './Modal.styled';
 
 const Modal = ({ isOpen, onClose, children }) => {
   useEffect(() => {

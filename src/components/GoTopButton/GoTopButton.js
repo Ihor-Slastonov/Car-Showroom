@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { BsArrowUpShort } from 'react-icons/bs';
 
 import { ScrollWrapper, ScrollBg } from './GoTopButton.styled';
@@ -30,7 +31,7 @@ function GoTopButton() {
       {isVisible && (
         <ScrollWrapper onClick={scrollToTop}>
           <ScrollBg>
-                      <BsArrowUpShort size={40} />
+            <BsArrowUpShort size={40} />
           </ScrollBg>
         </ScrollWrapper>
       )}

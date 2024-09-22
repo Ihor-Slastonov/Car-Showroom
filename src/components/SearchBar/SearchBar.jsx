@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import toast from 'react-hot-toast';
+
+import { useVehicle } from '../../utils/hooks/useVehicle';
 import { BiSearch } from 'react-icons/bi';
 import { IoClose } from 'react-icons/io5';
 
@@ -9,8 +12,6 @@ import {
   SearchButton,
   SearchClearButton,
 } from './SearchBar.styled';
-import toast from 'react-hot-toast';
-import { useVehicle } from '../../utils/hooks/useVehicle';
 
 const SearchBar = () => {
   const { handleSearch } = useVehicle();

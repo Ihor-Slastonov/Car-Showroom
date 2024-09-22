@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Img } from 'react-image';
 
 import MyLoader from '../MyLoader/MyLoader';
