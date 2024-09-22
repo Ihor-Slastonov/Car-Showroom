@@ -1,4 +1,4 @@
-import {  useRef } from 'react';
+import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Navigation, Thumbs, Pagination } from 'swiper/modules';
@@ -11,6 +11,9 @@ import {
   StyledSlide,
   ThumbsSwiper,
   ThumbsSlide,
+  ModalBackdrop,
+  ModalContent,
+  CloseButton,
 } from './VehicleImagesCarousel.styled';
 
 import 'swiper/css/bundle';
@@ -20,6 +23,18 @@ import 'swiper/css/thumbs';
 
 const VehicleImagesCarousel = ({ images }) => {
   const thumbsSwiperRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
+  const openModal = image => {
+    setCurrentImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage(null);
+  };
 
   return (
     <CarouselContainer>
@@ -33,7 +48,7 @@ const VehicleImagesCarousel = ({ images }) => {
         observeParents={true}
       >
         {images?.map((image, idx) => (
-          <StyledSlide key={idx}>
+          <StyledSlide key={idx} onClick={() => openModal(image)}>
             <MyImage src={image} alt={`vehicle-image-${idx}`} />
           </StyledSlide>
         ))}
@@ -63,6 +78,21 @@ const VehicleImagesCarousel = ({ images }) => {
           </ThumbsSlide>
         ))}
       </ThumbsSwiper>
+
+      {isModalOpen && (
+        <ModalBackdrop onClick={closeModal}>
+          <ModalContent onClick={e => e.stopPropagation()}>
+            <CloseButton onClick={closeModal}>&times;</CloseButton>
+            {currentImage && (
+              <MyImage
+                src={currentImage}
+                alt="Full vehicle image"
+                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+              />
+            )}
+          </ModalContent>
+        </ModalBackdrop>
+      )}
     </CarouselContainer>
   );
 };
