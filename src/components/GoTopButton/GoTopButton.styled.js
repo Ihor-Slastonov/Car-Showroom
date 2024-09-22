@@ -29,9 +29,7 @@ export const ScrollWrapper = styled.div`
   ${({ theme }) => theme.breakpoints.tablet} {
     right: 10%;
   }
-  ${({ theme }) => theme.breakpoints.desktop} {
-    right: 15%;
-  }
+
 `;
 
 export const ScrollBg = styled.span`
