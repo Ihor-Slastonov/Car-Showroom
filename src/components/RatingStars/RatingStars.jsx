@@ -10,7 +10,7 @@ const RatingStars = ({ rating = 0, starLimit = 5 }) => {
   const ratingWidth = (rating / starLimit) * 100;
   return (
     <StarRatingContainer>
-      {/* Обведенные звезды */}
+
       {Array(starLimit)
         .fill(0)
         .map((_, index) => (
@@ -19,7 +19,7 @@ const RatingStars = ({ rating = 0, starLimit = 5 }) => {
           </StarOutline>
         ))}
 
-      {/* Залитые звезды */}
+     
       <StarColoredContainer style={{ width: `${ratingWidth}%` }}>
         {Array(starLimit)
           .fill(0)
