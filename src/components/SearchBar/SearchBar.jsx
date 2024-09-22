@@ -50,7 +50,7 @@ const SearchBar = () => {
         value={inputValue}
         onChange={handleInputChange}
         type="search"
-        placeholder="Search by name"
+        placeholder="Search by model"
       />
     </StyledForm>
   );

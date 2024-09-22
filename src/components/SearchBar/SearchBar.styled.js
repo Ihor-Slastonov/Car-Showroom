@@ -11,6 +11,7 @@ export const StyledForm = styled.form`
 
   ${({ theme }) => theme.breakpoints.tablet} {
     width: 368px;
+    margin-left: auto;
   }
   ${({ theme }) => theme.breakpoints.desktop} {
     width: 410px;
