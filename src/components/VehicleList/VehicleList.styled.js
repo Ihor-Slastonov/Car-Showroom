@@ -13,5 +13,6 @@ export const StyledUl = styled.ul`
   /* desktop */
   ${({ theme }) => theme.breakpoints.desktop} {
     grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
   }
 `;
