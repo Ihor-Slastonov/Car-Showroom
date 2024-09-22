@@ -125,9 +125,11 @@ const VehicleFullDetails = ({ vehicle }) => {
               </VehicleShippingTitle>
             </div>
 
-            <VehicleQrWrapper>
-              <MyImage src={meta?.qrCode} alt="QR Code" />
-            </VehicleQrWrapper>
+            {meta?.qrCode && (
+              <VehicleQrWrapper>
+                <MyImage src={meta?.qrCode} alt="QR Code" />
+              </VehicleQrWrapper>
+            )}
           </VehicleShippingWrapper>
         </div>
       </VehicleWrapper>
