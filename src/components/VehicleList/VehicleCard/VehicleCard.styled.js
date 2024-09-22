@@ -66,7 +66,7 @@ export const CardInfoWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.dark_deep};
 `;
 
-export const CardTitle = styled.h3`
+export const CardTitle = styled.h1`
   margin-bottom: 8px;
 
   font-family: ${({ theme }) => theme.fonts.Poppins};
@@ -75,7 +75,7 @@ export const CardTitle = styled.h3`
   line-height: 1.5;
 `;
 
-export const CardTitleSecondary = styled.h4`
+export const CardTitleSecondary = styled.h2`
   margin-bottom: 16px;
 
   font-family: ${({ theme }) => theme.fonts.Poppins};
