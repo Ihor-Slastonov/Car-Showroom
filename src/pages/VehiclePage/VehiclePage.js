@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import toast from 'react-hot-toast';
+import vehicleApi from '../../services/vehiclesApi';
+
 import Section from '../../components/common/Section/Section';
 import Container from '../../components/common/Container/Container';
 import MyLoader from '../../components/common/MyLoader/MyLoader';
-import toast from 'react-hot-toast';
-import vehicleApi from '../../services/vehiclesApi';
 import VehicleFullDetails from '../../components/VehicleFullDetails/VehicleFullDetails';
+import VehicleComments from '../../components/VehicleComments/VehicleComments';
 
 const VehiclePage = () => {
   const { vehicleId } = useParams();
@@ -18,10 +20,8 @@ const VehiclePage = () => {
       try {
         setIsLoading(true);
         const vehicle = await vehicleApi.fetchVehicleById(vehicleId);
-        console.log(vehicle);
         setVehicle(vehicle);
       } catch (error) {
-        console.log(error.message);
         toast.error('Server error try again');
       } finally {
         setIsLoading(false);
@@ -32,12 +32,24 @@ const VehiclePage = () => {
   }, [vehicleId]);
 
   return (
-    <Section>
-      <Container>
-        {isLoading && <MyLoader />}
-        {!isLoading && vehicle && <VehicleFullDetails vehicle={vehicle} />}
-      </Container>
-    </Section>
+    <>
+      <Section>
+        <Container>
+          {isLoading && <MyLoader />}
+          {!isLoading && vehicle && <VehicleFullDetails vehicle={vehicle} />}
+        </Container>
+      </Section>
+      <Section noTopPadding={true}>
+        <Container>
+          {!isLoading && vehicle && (
+            <VehicleComments
+              reviews={vehicle?.reviews}
+              vehicleId={vehicle?.id}
+            />
+          )}
+        </Container>
+      </Section>
+    </>
   );
 };
 
